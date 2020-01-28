@@ -55,6 +55,9 @@ const _styles = {
     flexDirection: "row",
     position: "absolute",
 
+    justifyContent: "center",
+    overflow: "visible",
+    width: 0,
     transform: [{ translateY: -20 }],
 
     ...RX.Platform.select({
@@ -225,18 +228,13 @@ export const Account = (props: AccountProps) => {
               }}
               shift={lastInitialClientX - lastClientX}
               renderItem={(wallet: Wallet) => {
-                const [width, setWidth] = React.useState(0);
                 const [height, setHeight] = React.useState(0);
                 const handleItemLayout = (layout: LayoutInfo) => {
-                  if (Math.abs(width - layout.width) > 1) {
-                    setWidth(layout.width);
-                  }
                   if (Math.abs(height - layout.height) > 1) {
                     setHeight(layout.height);
                   }
                 };
                 const centring = {
-                  left: -width / 2,
                   top: -height / 2
                 };
 
