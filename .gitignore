@@ -30,6 +30,9 @@ build/
 local.properties
 *.iml
 
+# VS Code
+.vscode/.react/
+
 # node.js
 #
 node_modules/
@@ -63,3 +66,4 @@ dist-*
 
 # next.js build output
 .next
+
