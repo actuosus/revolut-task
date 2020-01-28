@@ -2,19 +2,23 @@
 
 Currency exchange application for Revolut task.
 
+## Demo
+
+https://revoluttask.now.sh
+
 ## Screenshots
 
 ### Web
 
-Here
+![Google Chrome Screenshot](/screenshots/revoluttask.now.sh_account_walletId=1(iPhone 6_7_8).png?raw=true "Google Chrome in Simulator mode")
 
 ### iOS
 
-There
+![iOS Simulator Screenshot](/screenshots/Simulator Screen Shot - iPhone 8 - 2020-01-28 at 23.14.23.png?raw=true "iOS iPhone 8 Simulator")
 
 ### Android
 
-Somewhere
+![Android Emulator Screenshot](/screenshots/Screenshot_1580243970.png?raw=true "Android Pixel 2 Emulator")
 
 ### Installation
 
@@ -31,7 +35,7 @@ yarn install
 - `yarn start:windows` - runs the Windows version of the app
 - `yarn start:rn-dev-server` - runs react native (RN) development server
 
-- `yarn test` – runs the tests using Jest and Enzime
+- `yarn test` – runs the tests using Jest and Enzyme
 
 ---
 
@@ -54,8 +58,8 @@ Created by **create-rx-app@0.6.4**
 
 ### Services
 
-- OpenExchange
 - ECB
+- OpenExchange
 
 ### Plus
 
