@@ -57,16 +57,6 @@ const Slider = (props: SliderProps) => {
     scrollBy(index);
   };
 
-  // A hack to not to show scrollbars on web for horizontal slider
-  if (process.browser) {
-    React.useEffect(() => {
-      RX.UserInterface.useCustomScrollbars(true);
-      return () => {
-        RX.UserInterface.useCustomScrollbars(false);
-      };
-    }, []);
-  }
-
   React.useEffect(() => {
     if (width) {
       scrollBy(selected, typeof prevSelected !== "undefined");
@@ -117,7 +107,10 @@ const Slider = (props: SliderProps) => {
           flexDirection: "row",
           ...RX.Platform.select({
             web: {
-              display: "flex"
+              display: "flex",
+              // Hide scrollbar on web
+              marginBottom: -30,
+              paddingBottom: 30
             }
           })
         }}
