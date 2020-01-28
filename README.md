@@ -10,11 +10,11 @@ https://revoluttask.now.sh
 
 ### Web
 
-![Google Chrome Screenshot](/screenshots/revoluttask.now.sh_account_walletId=1(iPhone 6_7_8).png?raw=true "Google Chrome in Simulator mode")
+![Google Chrome Screenshot](/screenshots/revoluttask.now.sh_account_walletId_1_iPhone_6_7_8_.png?raw=true "Google Chrome in Simulator mode")
 
 ### iOS
 
-![iOS Simulator Screenshot](/screenshots/Simulator Screen Shot - iPhone 8 - 2020-01-28 at 23.14.23.png?raw=true "iOS iPhone 8 Simulator")
+![iOS Simulator Screenshot](/screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png?raw=true "iOS iPhone 8 Simulator")
 
 ### Android
 
