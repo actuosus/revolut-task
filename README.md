@@ -55,6 +55,7 @@ Created by **create-rx-app@0.6.4**
 - React Native
 - Jest
 - Enzyme
+- Next.js (API proxy and simple SSR)
 
 ### Services
 
