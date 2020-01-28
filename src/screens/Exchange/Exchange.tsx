@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as RX from "reactxp";
 import { LayoutInfo } from "reactxp/dist/common/Types";
 import { ReduxState } from "../../@types/ReduxState";
+import Button from "../../components/Button";
 import FloatingBubbles from "../../components/FloatingBubbles";
 import FormattedAmount from "../../components/FormattedAmount";
 import ArrowDropDown from "../../components/icons/ArrowDropDown";
@@ -347,9 +348,9 @@ export const Exchange = (props: ExchangeProps) => {
               justifyContent: "flex-end"
             }}
           >
-            <RX.Button onPress={handleHidePicker}>
+            <Button onPress={handleHidePicker}>
               <RX.Text>Done</RX.Text>
-            </RX.Button>
+            </Button>
           </RX.View>
         </RX.Animated.View>
       </RX.View>
@@ -375,12 +376,13 @@ export const Exchange = (props: ExchangeProps) => {
           <FloatingBubbles />
           <Header
             headerLeft={
-              <RX.Button
+              <Button
                 style={_styles.headerButton}
                 onPress={handleCancelPress}
+                activeOpacity={0.8}
               >
                 <RX.Text style={_styles.headerButtonText}>Cancel</RX.Text>
-              </RX.Button>
+              </Button>
             }
             headerTitle={
               fromWallet.id !== toWallet.id ? (
@@ -428,13 +430,14 @@ export const Exchange = (props: ExchangeProps) => {
               ) : null
             }
             headerRight={
-              <RX.Button
+              <Button
                 style={_styles.headerButton}
                 onPress={handleExchangePress}
                 disabled={!isValid}
+                activeOpacity={0.8}
               >
                 <RX.Text style={_styles.headerButtonText}>Exchange</RX.Text>
-              </RX.Button>
+              </Button>
             }
           />
           <RX.View style={_styles.form}>

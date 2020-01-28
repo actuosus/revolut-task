@@ -1,6 +1,7 @@
 import React from "react";
 import * as RX from "reactxp";
 import { LayoutInfo } from "reactxp/dist/common/Types";
+import Button from "../Button";
 
 const ICON_SIZE = 7;
 
@@ -56,7 +57,7 @@ const Pagination = (props: PaginationProps) => {
       {Array(props.number)
         .fill(null)
         .map((_, i) => (
-          <RX.Button
+          <Button
             key={`dot-${i}`}
             style={_styles.dotWrapper}
             onPress={handleItemPress(i)}
@@ -74,7 +75,7 @@ const Pagination = (props: PaginationProps) => {
                 active === i ? _styles.active : {}
               ])}
             />
-          </RX.Button>
+          </Button>
         ))}
     </RX.View>
   );

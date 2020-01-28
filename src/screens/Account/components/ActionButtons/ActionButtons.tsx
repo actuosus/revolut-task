@@ -1,5 +1,6 @@
 import React from "react";
 import * as RX from "reactxp";
+import Button from "../../../../components/Button";
 import Add from "../../../../components/icons/Add";
 import ArrowRightAlt from "../../../../components/icons/ArrowRightAlt";
 import Cached from "../../../../components/icons/Cached";
@@ -42,24 +43,24 @@ const ActionButtons = (props: ActionButtonsProps) => {
 
   return (
     <RX.View style={_styles.actions}>
-      <RX.Button style={_styles.button} disabled>
+      <Button style={_styles.button} disabled>
         <RX.View style={_styles.buttonIcon}>
           <Add size={36} />
         </RX.View>
         <RX.Text style={_styles.buttonText}>Top up</RX.Text>
-      </RX.Button>
-      <RX.Button style={_styles.button} onPress={handleExchangePress}>
+      </Button>
+      <Button style={_styles.button} onPress={handleExchangePress}>
         <RX.View style={_styles.buttonIcon}>
           <Cached size={36} />
         </RX.View>
         <RX.Text style={_styles.buttonText}>Exchange</RX.Text>
-      </RX.Button>
-      <RX.Button style={_styles.button} disabled>
+      </Button>
+      <Button style={_styles.button} disabled>
         <RX.View style={_styles.buttonIcon}>
           <ArrowRightAlt size={36} />
         </RX.View>
         <RX.Text style={_styles.buttonText}>Bank</RX.Text>
-      </RX.Button>
+      </Button>
     </RX.View>
   );
 };
