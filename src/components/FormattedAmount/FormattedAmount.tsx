@@ -3,6 +3,11 @@ import * as RX from "reactxp";
 import { formatMoneyParts } from "../../lib";
 
 const _styles = {
+  root: RX.Styles.createViewStyle({
+    flexDirection: "row",
+    // @ts-ignore Actually "baseline" is supported by React Native
+    alignItems: "baseline"
+  }),
   text: RX.Styles.createTextStyle({
     fontSize: 18,
     color: "white"
@@ -50,14 +55,7 @@ const FormattedAmount = ({
   return (
     <RX.View
       // @ts-ignore Web styles
-      style={[
-        {
-          flexDirection: "row",
-          alignItems: "flex-end",
-          ...RX.Platform.select({ web: { alignItems: "baseline" } })
-        },
-        style
-      ]}
+      style={[_styles.root, style]}
     >
       {prefix ? (
         <RX.Text
