@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Android",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnative",
+            "request": "launch",
+            "platform": "android",
+            "sourceMaps": true
+        },
+        {
+            "name": "Debug iOS",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnative",
+            "request": "launch",
+            "platform": "ios",
+            "sourceMaps": true
+        },
+        {
+            "name": "Attach to packager",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnative",
+            "request": "attach",
+            "sourceMaps": true
+        },
+        {
+            "name": "Launch jest",
+            "cwd": "${workspaceFolder}",
+            "type": "node",
+            "request": "launch",
+            "program": "node_modules/.bin/jest",
+            "args": [
+                "--runInBand"
+            ]
+        }
+    ]
+}

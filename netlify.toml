@@ -1,0 +1,4 @@
+[build]
+  command = "yarn build:web" # the command you run to build this file
+  functions = "dist-lambda" # netlify-lambda builds to this folder AND Netlify reads functions from here
+  publish = "dist-web" # app builds to this folder, Netlify should serve all these files statically

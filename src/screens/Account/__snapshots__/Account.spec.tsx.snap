@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Account /> matches its snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Account
+    dispatch={[Function]}
+    navigation={
+      Object {
+        "default": Object {
+          "addListener": [Function],
+          "closeDrawer": [Function],
+          "dangerouslyGetParent": [Function],
+          "dismiss": [Function],
+          "dispatch": [Function],
+          "getParam": [Function],
+          "goBack": [Function],
+          "isFocused": [Function],
+          "navigate": [Function],
+          "openDrawer": [Function],
+          "pop": [Function],
+          "popToTop": [Function],
+          "push": [Function],
+          "replace": [Function],
+          "setParams": [Function],
+          "state": Object {
+            "index": 0,
+            "isTransitioning": false,
+            "key": "",
+            "params": Object {
+              "fromWalletId": "1",
+            },
+            "routes": Array [],
+          },
+          "toggleDrawer": [Function],
+        },
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    transactions={
+      Object {
+        "1": Object {
+          "amount": 10,
+          "fromAmount": 2,
+          "fromWalletId": 1,
+          "id": 1,
+          "toWalletId": 2,
+          "type": 10,
+        },
+      }
+    }
+    wallets={
+      Object {
+        "1": Object {
+          "balance": 10,
+          "currency": "USD",
+          "id": 1,
+        },
+        "2": Object {
+          "balance": 12,
+          "currency": "GBP",
+          "id": 2,
+        },
+      }
+    }
+  />
+</ContextProvider>
+`;

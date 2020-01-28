@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Exchange /> matches its snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Exchange
+    exchange={[Function]}
+    getRates={[Function]}
+    navigation={
+      Object {
+        "default": Object {
+          "addListener": [Function],
+          "closeDrawer": [Function],
+          "dangerouslyGetParent": [Function],
+          "dismiss": [Function],
+          "dispatch": [Function],
+          "getParam": [Function],
+          "goBack": [Function],
+          "isFocused": [Function],
+          "navigate": [Function],
+          "openDrawer": [Function],
+          "pop": [Function],
+          "popToTop": [Function],
+          "push": [Function],
+          "replace": [Function],
+          "setParams": [Function],
+          "state": Object {
+            "index": 0,
+            "isTransitioning": false,
+            "key": "",
+            "params": Object {
+              "fromWalletId": "1",
+            },
+            "routes": Array [],
+          },
+          "toggleDrawer": [Function],
+        },
+      }
+    }
+    rates={
+      Object {
+        "GBP": Object {
+          "GBP": 1,
+          "USD": 0.8,
+        },
+        "USD": Object {
+          "GBP": 1.25,
+          "USD": 1,
+        },
+      }
+    }
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "liftedStore": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    subscribeToRates={[Function]}
+    unsubscribeFromRates={[Function]}
+    wallets={
+      Object {
+        "1": Object {
+          "balance": 10,
+          "currency": "USD",
+          "id": "1",
+        },
+        "2": Object {
+          "balance": 12,
+          "currency": "GBP",
+          "id": "2",
+        },
+      }
+    }
+  />
+</ContextProvider>
+`;

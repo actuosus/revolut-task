@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    // "declarationDir": "dist-types",
+    // "composite": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    // "declaration": true,
+    "jsxFactory": "React",
+    "noResolve": false,
+    "module": "esnext",
+    "target": "es2015",
+    "jsx": "preserve",
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "strict": false,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "src/@types/*.ts",
+    "src/**/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
