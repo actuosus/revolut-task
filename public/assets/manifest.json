@@ -1,7 +1,7 @@
 {
   "name": "Revolut Exchange Task",
   "short_name": "Revolut Exchange Task",
-  "description": null,
+  "description": "Currency exchange application for Revolut task.",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",

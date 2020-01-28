@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
   "name": "Revolut Exchange Task",
-  "description": null,
+  "description": "Currency exchange application for Revolut task.",
   "icons": {
     "60": "/assets/firefox_app_60x60.png",
     "128": "/assets/firefox_app_128x128.png",
