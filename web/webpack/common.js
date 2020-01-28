@@ -6,7 +6,7 @@ const path = require("path");
 
 const ROOT_PATH = path.join(__dirname, "..", "..");
 const NODE_MODULES_PATH = path.join(ROOT_PATH, "node_modules");
-const DIST_PATH = path.join(ROOT_PATH, "static");
+const DIST_PATH = path.join(ROOT_PATH, "public");
 const APP_PATH = path.join(ROOT_PATH, "src");
 const WEB_PATH = path.join(ROOT_PATH, "web");
 const TS_CONFIG_PATH = path.join(ROOT_PATH, "tsconfig.json");
