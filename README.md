@@ -10,15 +10,15 @@ https://revoluttask.now.sh
 
 ### Web
 
-![Google Chrome Screenshot](/screenshots/revoluttask.now.sh_account_walletId_1_iPhone_6_7_8_.png?raw=true "Google Chrome in Simulator mode")
+<img src="screenshots/revoluttask.now.sh_account_walletId_1_iPhone_6_7_8_.png" height="400" alt="Google Chrome Screenshot" title="Google Chrome in Simulator mode"/>
 
 ### iOS
 
-![iOS Simulator Screenshot](/screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png?raw=true "iOS iPhone 8 Simulator")
+<img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png" height="400" alt="iOS Simulator Screenshot" title="iOS iPhone 8 Simulator"/>
 
 ### Android
 
-![Android Emulator Screenshot](/screenshots/Screenshot_1580243970.png?raw=true "Android Pixel 2 Emulator")
+<img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Screenshot" title="Android Pixel 2 Emulator"/>
 
 ### Installation
 
