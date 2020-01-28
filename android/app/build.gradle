@@ -110,8 +110,6 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        renderscriptTargetApi 23
-        renderscriptSupportModeEnabled true
     }
     splits {
         abi {
@@ -143,7 +141,6 @@ android {
 }
 
 dependencies {
-    implementation project(':@react-native-community_blur')
     implementation project(':react-native-svg')
     implementation project(':@react-native-community_async-storage')
     implementation project(':react-native-screens')
