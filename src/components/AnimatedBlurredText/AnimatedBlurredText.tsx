@@ -25,7 +25,9 @@ const AnimatedBlurredText = ({
   value: string;
   style?: RX.Types.StyleRuleSetOrArray<RX.Types.ViewStyle>;
 }) => {
-  const blurValue = React.useRef(RX.Animated.createValue(1)).current;
+  const blurValue = React.useRef(
+    RX.Animated.createValue(process.browser ? 1 : 0)
+  ).current;
   const interpolated = React.useRef(
     blur(blurValue, {
       inputRange: [0, 1],
