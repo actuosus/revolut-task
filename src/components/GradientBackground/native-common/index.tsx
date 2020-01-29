@@ -18,17 +18,27 @@ const GradientBackground = ({ opacity, style }: GradientBackgroundProps) => {
         <LinearGradient id={"grad"} x1={"0%"} y1={"100%"} x2={"100%"} y2={"0%"}>
           <Stop
             offset={"0%"}
-            stopColor={"rgb(35,94,203)"}
+            stopColor={"rgb(37,93,191)"}
             stopOpacity={opacity || 1}
           />
           <Stop
-            offset={"49%"}
-            stopColor={"rgb(35,94,203)"}
+            offset={"20%"}
+            stopColor={"rgb(39,102,218)"}
             stopOpacity={opacity || 1}
           />
           <Stop
-            offset={"83%"}
-            stopColor={"rgb(46,103,208)"}
+            offset={"50%"}
+            stopColor={"rgb(59,121,250)"}
+            stopOpacity={opacity || 1}
+          />
+          <Stop
+            offset={"75%"}
+            stopColor={"rgb(46,105,219)"}
+            stopOpacity={opacity || 1}
+          />
+          <Stop
+            offset={"82%"}
+            stopColor={"rgb(59,100,193)"}
             stopOpacity={opacity || 1}
           />
           <Stop
@@ -37,7 +47,7 @@ const GradientBackground = ({ opacity, style }: GradientBackgroundProps) => {
             stopOpacity={opacity || 1}
           />
           <Stop
-            offset={"90%"}
+            offset={"92%"}
             stopColor={"rgb(164,28,129)"}
             stopOpacity={opacity || 1}
           />
