@@ -38,6 +38,9 @@ const RotatingItems = (props: RotatingItemsProps) => {
 
   const [width, setWidth] = React.useState(window.width);
   const [height, setHeight] = React.useState(1);
+
+  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleLayout = (layout: LayoutInfo) => {
     setWidth(layout.width);
     setHeight(layout.height);
@@ -171,7 +174,6 @@ const RotatingItems = (props: RotatingItemsProps) => {
   return (
     <GestureView
       style={[style, _styles.root]}
-      onLayout={handleLayout}
       onPanHorizontal={handlePanHorizontal}
       onScrollWheel={handleScrollWheel}
     >
