@@ -58,8 +58,8 @@ const buildConfig = (env, argv) => ({
       devMode: "webapp",
       logo: path.join(WEB_PATH, "images", "revolut-icon.svg"),
       favicons: {
-        appName: "Revolut Exchange Task"
-        //   appDescription: "App code example for Revolut",
+        appName: "Revolut Task",
+        appDescription: "App code example for Revolut task"
         //   developerName: "Arthur Chafonov",
         //   // developerURL: null, // prevent retrieving from the nearest package.json
         //   background: "#fff",
