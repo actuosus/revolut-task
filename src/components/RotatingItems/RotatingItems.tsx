@@ -176,6 +176,7 @@ const RotatingItems = (props: RotatingItemsProps) => {
 
   return (
     <GestureView
+      // @ts-ignore translate styles
       style={[style, _styles.root]}
       onPanHorizontal={handlePanHorizontal}
       onScrollWheel={handleScrollWheel}
