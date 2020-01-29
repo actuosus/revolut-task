@@ -54,12 +54,12 @@ const _styles = {
 
     justifyContent: "center",
     overflow: "visible",
-    width: 0,
     transform: [{ translateY: -20 }],
 
     ...RX.Platform.select({
       default: {},
       web: {
+        width: 0,
         userSelect: "none",
         WebkitUserSelect: "none",
         alignItems: "baseline"
@@ -187,15 +187,23 @@ export const Account = (props: AccountProps) => {
               onRotationEnd={value => setSelected(value)}
               onRotationDragEnd={value => setInternalSelected(value)}
               renderItem={(wallet: Wallet) => {
+                const [width, setWidth] = React.useState(0);
                 const [height, setHeight] = React.useState(0);
                 const handleItemLayout = (layout: LayoutInfo) => {
+                  if (Math.abs(width - layout.width) > 1) {
+                    setWidth(layout.width);
+                  }
                   if (Math.abs(height - layout.height) > 1) {
                     setHeight(layout.height);
                   }
                 };
-                const centring = {
-                  top: -height / 2
-                };
+                const centring = RX.Platform.select({
+                  default: {
+                    left: -width / 2,
+                    top: -height / 2
+                  },
+                  web: { top: -height / 2 }
+                });
 
                 const _style = RX.Styles.combine(_styles.amount, centring);
 
