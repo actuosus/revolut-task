@@ -56,6 +56,7 @@ Created by **create-rx-app@0.6.4**
 - Jest
 - Enzyme
 - Next.js (API proxy and simple SSR)
+- Material Icons (by SVG)
 
 ### Services
 
