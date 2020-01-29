@@ -1,4 +1,3 @@
-import debounce from "debounce";
 import React from "react";
 import { NavigationScreenProp, NavigationState } from "react-navigation";
 import { connect } from "react-redux";
@@ -9,7 +8,6 @@ import AnimatedBackground from "../../components/AnimatedBackground";
 import AnimatedBlurredText from "../../components/AnimatedBlurredText";
 import BottomTabBar from "../../components/BottomTabBar";
 import FormattedAmount from "../../components/FormattedAmount";
-import GestureView from "../../components/GestureView";
 import Pager from "../../components/Pagination";
 import RotatingItems from "../../components/RotatingItems";
 import SafeAreaView from "../../components/SafeAreaView";
@@ -116,11 +114,6 @@ export const Account = (props: AccountProps) => {
       toWallet: wallets[transactions[_].toWalletId]
     }));
 
-  const len = Object.keys(wallets).length;
-
-  const [lastInitialClientX, setInitialLastClientX] = React.useState(0);
-  const [lastClientX, setLastClientX] = React.useState(0);
-
   const handleExchangePress = () => {
     const fromWalletId = Object.keys(wallets)[selected];
     const params: ExchangeNavigationParams = { fromWalletId };
@@ -137,33 +130,6 @@ export const Account = (props: AccountProps) => {
     }
     navigation.navigate("Exchange", params);
   };
-
-  const handlePanHorizontal = (gestureState: RX.Types.PanGestureState) => {
-    setInitialLastClientX(gestureState.initialClientX);
-    setLastClientX(gestureState.clientX);
-
-    if (gestureState.isComplete) {
-      const diff = gestureState.initialClientX - gestureState.clientX;
-      if (diff < 0) {
-        setInternalSelected(selected - 1 >= 0 ? selected - 1 : len - 1);
-      }
-      if (diff > 0) {
-        setInternalSelected(selected + 1 < len ? selected + 1 : 0);
-      }
-    }
-  };
-
-  const handleScrollWheel = debounce(
-    (gestureState: RX.Types.ScrollWheelGestureState) => {
-      if (gestureState.scrollAmount < -2) {
-        setSelected(selected - 1 >= 0 ? selected - 1 : len - 1);
-      }
-      if (gestureState.scrollAmount > 2) {
-        setSelected(selected + 1 < len ? selected + 1 : 0);
-      }
-    },
-    300
-  );
 
   const handlePageItemPress = (value: number) => {
     setInternalSelected(value);
@@ -205,11 +171,7 @@ export const Account = (props: AccountProps) => {
       forceInset={{ top: "never", bottom: "always" }}
     >
       <RX.View style={_styles.root}>
-        <GestureView
-          style={_styles.header}
-          onPanHorizontal={handlePanHorizontal}
-          onScrollWheel={handleScrollWheel}
-        >
+        <RX.View style={_styles.header}>
           <AnimatedBackground style={Styles.absoluteFill} />
 
           <RX.View style={_styles.accounts}>
@@ -223,10 +185,8 @@ export const Account = (props: AccountProps) => {
               }}
               items={Object.keys(wallets).map(_ => wallets[_])}
               selected={internalSelected}
-              onRotationEnd={value => {
-                setSelected(value);
-              }}
-              shift={lastInitialClientX - lastClientX}
+              onRotationEnd={value => setSelected(value)}
+              onRotationDragEnd={value => setInternalSelected(value)}
               renderItem={(wallet: Wallet) => {
                 const [height, setHeight] = React.useState(0);
                 const handleItemLayout = (layout: LayoutInfo) => {
@@ -277,7 +237,7 @@ export const Account = (props: AccountProps) => {
           </RX.View>
 
           <ActionButtons onExchangePress={handleExchangePress} />
-        </GestureView>
+        </RX.View>
         <RX.View
           style={{
             flex: 1,

@@ -1,9 +1,11 @@
+import debounce from "debounce";
 import React from "react";
 import * as RX from "reactxp";
 import { LayoutInfo, SyntheticEvent } from "reactxp/dist/common/Types";
 import Mat3 from "../../lib/utils/3d/Mat3";
 import Vertex from "../../lib/utils/3d/Vertex";
 import { usePrevious } from "../../lib/utils/hooks";
+import GestureView from "../GestureView";
 
 const MIN_FAR_OPACITY = 0.3;
 const MIN_FAR_SCALE = 0.05;
@@ -24,6 +26,7 @@ type RotatingItemsProps = {
   renderItem: (item: any) => React.ReactNode;
   onItemPress?: (index: number, item: any, event: SyntheticEvent) => void;
   onRotationEnd?: (index: number) => void;
+  onRotationDragEnd?: (index: number) => void;
 };
 
 const window = RX.UserInterface.measureWindow();
@@ -39,7 +42,7 @@ const RotatingItems = (props: RotatingItemsProps) => {
     setWidth(layout.width);
     setHeight(layout.height);
   };
-  const radius = Math.max(width, height) / 1.5;
+  const radius = Math.max(width, height) / 2.5;
 
   const [stepAngle, setStepAngle] = React.useState(selected * angle);
   const [lastStepAngle, setLastStepAngle] = React.useState(0);
@@ -92,12 +95,6 @@ const RotatingItems = (props: RotatingItemsProps) => {
     }
   };
 
-  React.useEffect(() => {
-    if (props.shift) {
-      setStepAngle((Math.PI / 360) * props.shift + lastStepAngle);
-    }
-  }, [props.shift]);
-
   const prevSelected = usePrevious(selected);
   React.useEffect(() => {
     stop();
@@ -134,8 +131,50 @@ const RotatingItems = (props: RotatingItemsProps) => {
     props.onItemPress && props.onItemPress(index, item, event);
   };
 
+  React.useEffect(() => {
+    const { shift } = props;
+    if (shift) {
+      setStepAngle((Math.PI / 360) * shift + lastStepAngle);
+    }
+  }, [props.shift]);
+
+  const handlePanHorizontal = (gestureState: RX.Types.PanGestureState) => {
+    const diff = gestureState.initialClientX - gestureState.clientX;
+    setStepAngle((Math.PI / 360) * diff + lastStepAngle);
+
+    if (gestureState.isComplete) {
+      if (diff < 0) {
+        props.onRotationDragEnd &&
+          props.onRotationDragEnd(selected - 1 >= 0 ? selected - 1 : len - 1);
+      }
+      if (diff > 0) {
+        props.onRotationDragEnd &&
+          props.onRotationDragEnd(selected + 1 < len ? selected + 1 : 0);
+      }
+    }
+  };
+
+  const handleScrollWheel = debounce(
+    (gestureState: RX.Types.ScrollWheelGestureState) => {
+      if (gestureState.scrollAmount < -2) {
+        props.onRotationDragEnd &&
+          props.onRotationDragEnd(selected - 1 >= 0 ? selected - 1 : len - 1);
+      }
+      if (gestureState.scrollAmount > 2) {
+        props.onRotationDragEnd &&
+          props.onRotationDragEnd(selected + 1 < len ? selected + 1 : 0);
+      }
+    },
+    300
+  );
+
   return (
-    <RX.View style={[style, _styles.root]} onLayout={handleLayout}>
+    <GestureView
+      style={[style, _styles.root]}
+      onLayout={handleLayout}
+      onPanHorizontal={handlePanHorizontal}
+      onScrollWheel={handleScrollWheel}
+    >
       {items.map((_, i) => {
         const ratio = 2;
         // Inverted direction for upright rotation
@@ -180,7 +219,7 @@ const RotatingItems = (props: RotatingItemsProps) => {
           </RX.Animated.View>
         );
       })}
-    </RX.View>
+    </GestureView>
   );
 };
 
