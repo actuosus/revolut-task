@@ -15,9 +15,12 @@ const Button = (props: RX.Types.ButtonProps) => {
     props.onPressOut && props.onPressOut(e);
   };
 
-  const activeStyle = RX.Styles.createButtonStyle({
-    opacity: props.activeOpacity || DEFAULT_ACTIVE_OPACITY
-  });
+  const activeStyle = RX.Styles.createButtonStyle(
+    {
+      opacity: props.activeOpacity || DEFAULT_ACTIVE_OPACITY
+    },
+    false
+  );
 
   return (
     <RX.Button
