@@ -19,7 +19,8 @@ https://revoluttask.actuosus.now.sh
 
 ### Android
 
-<img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Screenshot" title="Android Pixel 2 Emulator"/>
+<img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Account Screenshot" title="Android Pixel 2 Emulator Account Screen"/>
+<img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Exchange Screenshot" title="Android Pixel 2 Emulator Exchange Screen"/>
 
 ### Installation
 
