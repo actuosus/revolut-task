@@ -45,8 +45,7 @@ const _styles = {
     alignItems: "center",
     justifyContent: "center",
     overflow: "visible",
-    minWidth: RX.UserInterface.measureWindow().width,
-    marginBottom: RX.UserInterface.measureWindow().height / 16
+    minWidth: RX.UserInterface.measureWindow().width
   }),
   // @ts-ignore Web styles
   amount: RX.Styles.createViewStyle({

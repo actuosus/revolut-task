@@ -2,6 +2,7 @@ import debounce from "debounce";
 import React from "react";
 import * as RX from "reactxp";
 import { LayoutInfo, SyntheticEvent } from "reactxp/dist/common/Types";
+import Styles from "../../lib/styles";
 import Mat3 from "../../lib/utils/3d/Mat3";
 import Vertex from "../../lib/utils/3d/Vertex";
 import { usePrevious } from "../../lib/utils/hooks";
@@ -12,6 +13,10 @@ const MIN_FAR_SCALE = 0.05;
 
 const _styles = {
   root: RX.Platform.select({
+    default: {
+      minHeight: 60,
+      overflow: "visible"
+    },
     web: {
       transform: [{ translateX: 0 }, { translateY: 0 }, { translateZ: 0 }]
     }
@@ -39,13 +44,11 @@ const RotatingItems = (props: RotatingItemsProps) => {
   const [width, setWidth] = React.useState(window.width);
   const [height, setHeight] = React.useState(1);
 
-  // @ts-ignore
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleLayout = (layout: LayoutInfo) => {
     setWidth(layout.width);
     setHeight(layout.height);
   };
-  const radius = Math.max(width, height) / 2.5;
+  const radius = Math.max(width, height) / 2;
 
   const [stepAngle, setStepAngle] = React.useState(selected * angle);
   const [lastStepAngle, setLastStepAngle] = React.useState(0);
@@ -177,50 +180,55 @@ const RotatingItems = (props: RotatingItemsProps) => {
       onPanHorizontal={handlePanHorizontal}
       onScrollWheel={handleScrollWheel}
     >
-      {items.map((_, i) => {
-        const ratio = 2;
-        // Inverted direction for upright rotation
-        const current = (len - i) * angle + stepAngle + Math.PI / 2;
+      <RX.View
+        style={[Styles.absoluteFill, { overflow: "visible" }]}
+        onLayout={handleLayout}
+      >
+        {items.map((_, i) => {
+          const ratio = 2;
+          // Inverted direction for upright rotation
+          const current = (len - i) * angle + stepAngle + Math.PI / 2;
 
-        const x = Math.cos(current);
-        const y = Math.sin(current);
+          const x = Math.cos(current);
+          const y = Math.sin(current);
 
-        const vertex = new Vertex(x, y, 0);
-        const transform = Mat3.rotationX(Math.PI / 4);
-        const v = Vertex.transform(vertex, transform);
+          const vertex = new Vertex(x, y, 0);
+          const transform = Mat3.rotationX(Math.PI / 4);
+          const v = Vertex.transform(vertex, transform);
 
-        const translateX = v.x * radius;
-        const translateY = v.y * radius;
-        const scale = Math.max(v.z, MIN_FAR_SCALE) * ratio;
+          const translateX = v.x * radius;
+          const translateY = v.y * radius + radius;
+          const scale = Math.max(v.z, MIN_FAR_SCALE) * ratio;
 
-        const opacity = Math.max(v.z, MIN_FAR_OPACITY) * 1.2;
+          const opacity = Math.max(v.z, MIN_FAR_OPACITY) * 1.2;
 
-        const style = RX.Styles.createViewStyle(
-          {
-            position: "absolute",
-            overflow: "visible",
-            transform: [
-              { translateX },
-              { translateY },
-              // Emulate field of view with scaling
-              { scale }
-            ],
-            // Emulate field of view with opacity
-            opacity
-          },
-          false
-        );
+          const style = RX.Styles.createViewStyle(
+            {
+              position: "absolute",
+              overflow: "visible",
+              transform: [
+                { translateX },
+                { translateY },
+                // Emulate field of view with scaling
+                { scale }
+              ],
+              // Emulate field of view with opacity
+              opacity
+            },
+            false
+          );
 
-        return (
-          <RX.Animated.View
-            style={style}
-            key={`item-${i}`}
-            onPress={handleItemPress(i, _)}
-          >
-            {props.renderItem(_)}
-          </RX.Animated.View>
-        );
-      })}
+          return (
+            <RX.Animated.View
+              style={style}
+              key={`item-${i}`}
+              onPress={handleItemPress(i, _)}
+            >
+              {props.renderItem(_)}
+            </RX.Animated.View>
+          );
+        })}
+      </RX.View>
     </GestureView>
   );
 };
