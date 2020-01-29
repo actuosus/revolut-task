@@ -6,15 +6,15 @@ import Rect from "../../svg/Rect";
 import Stop from "../../svg/Stop";
 import Svg from "../../svg/Svg";
 
-interface GradientBackgroundProps {
+interface SecondaryGradientBackgroundProps {
   opacity?: number;
   style?: RX.Types.StyleRuleSetOrArray<RX.Types.ViewStyle>;
 }
 
-const IntenseGradientBackground = ({
+const SecondaryGradientBackground = ({
   opacity,
   style
-}: GradientBackgroundProps) => {
+}: SecondaryGradientBackgroundProps) => {
   return (
     <Svg width={"100%"} height={"100%"} style={style}>
       <Defs>
@@ -51,4 +51,4 @@ const IntenseGradientBackground = ({
   );
 };
 
-export default IntenseGradientBackground;
+export default SecondaryGradientBackground;

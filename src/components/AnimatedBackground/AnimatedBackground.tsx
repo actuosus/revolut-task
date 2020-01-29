@@ -2,7 +2,8 @@ import React from "react";
 import * as RX from "reactxp";
 import Styles from "../../lib/styles";
 import FloatingBubbles from "../FloatingBubbles";
-import IntenseGradientBackground from "../IntenseGradientBackground";
+import GradientBackground from "../GradientBackground";
+import SecondaryGradientBackground from "../SecondaryGradientBackground";
 
 interface AnimatedBackgroundProps {
   style?: RX.Types.StyleRuleSetOrArray<RX.Types.ViewStyle>;
@@ -10,20 +11,30 @@ interface AnimatedBackgroundProps {
 
 const AnimatedBackground = ({ style }: AnimatedBackgroundProps) => (
   <RX.View style={style}>
-    <IntenseGradientBackground
+    <SecondaryGradientBackground
       // @ts-ignore Web styles
       style={[
         Styles.absoluteFill,
         {
           ...RX.Platform.select({
             web: {
-              background: `linear-gradient(30deg,
-              rgba(35,94,203,1) 0%,
-              rgba(35,94,203,1) 49%,
-              rgba(46,103,208,1) 83%,
-              rgba(60,92,188,1) 87%,
-              rgba(164,28,129,1) 97%
-            )`
+              background: `linear-gradient(120deg, rgba(33,72,163,1) 0%, rgba(60,122,251,1) 50%, rgba(42,103,228,1) 95%)`,
+              opacity: 1
+            }
+          })
+        }
+      ]}
+    />
+    <GradientBackground
+      // @ts-ignore Web styles
+      style={[
+        Styles.absoluteFill,
+        {
+          ...RX.Platform.select({
+            web: {
+              background: `linear-gradient(30deg, rgba(37,93,191,1) 0%, rgba(39,102,218,1) 20%, rgba(59,121,250,1) 50%, rgba(46,105,219,1) 75%, rgba(59,100,193,1) 82%, rgba(60,92,188,1) 85%, rgba(164,28,129,1) 92%)`,
+              boxShadow: `inset 0 0 150px rgba(0,0,0,0.25)`,
+              opacity: 0.75
             }
           })
         }

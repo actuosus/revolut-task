@@ -15,30 +15,30 @@ const GradientBackground = ({ opacity, style }: GradientBackgroundProps) => {
   return (
     <Svg width={"100%"} height={"100%"} style={style}>
       <Defs>
-        <LinearGradient id={"grad"} x1={"0%"} y1={"100%"} x2={"70%"} y2={"0%"}>
+        <LinearGradient id={"grad"} x1={"0%"} y1={"100%"} x2={"100%"} y2={"0%"}>
           <Stop
             offset={"0%"}
-            stopColor={"rgb(27,66,130)"}
+            stopColor={"rgb(35,94,203)"}
             stopOpacity={opacity || 1}
           />
           <Stop
             offset={"49%"}
-            stopColor={"rgb(39,76,150)"}
+            stopColor={"rgb(35,94,203)"}
             stopOpacity={opacity || 1}
           />
           <Stop
-            offset={"60%"}
-            stopColor={"rgb(37,57,112)"}
+            offset={"83%"}
+            stopColor={"rgb(46,103,208)"}
             stopOpacity={opacity || 1}
           />
           <Stop
-            offset={"75%"}
-            stopColor={"rgb(43,48,94)"}
+            offset={"85%"}
+            stopColor={"rgb(60,92,188)"}
             stopOpacity={opacity || 1}
           />
           <Stop
-            offset={"100%"}
-            stopColor={"rgb(82,1,60)"}
+            offset={"90%"}
+            stopColor={"rgb(164,28,129)"}
             stopOpacity={opacity || 1}
           />
         </LinearGradient>
