@@ -16,11 +16,7 @@ export default class GestureView extends RX.GestureView {
       pageY = e.touches[0].pageY;
       clientX = e.touches[0].locationX;
       clientY = e.touches[0].locationY;
-    } else if (
-      e.nativeEvent.type === "touchend" &&
-      e.changedTouches &&
-      e.changedTouches.length > 0
-    ) {
+    } else if (e.changedTouches && e.changedTouches.length > 0) {
       const ft = e.changedTouches[0];
       pageX = ft.pageX;
       pageY = ft.pageY;
