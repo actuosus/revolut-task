@@ -9,7 +9,7 @@ const _styles = {
 
     ...RX.Platform.select({
       ios: {
-        paddingTop: 20
+        paddingTop: 0
       },
       android: {
         paddingTop: 20
