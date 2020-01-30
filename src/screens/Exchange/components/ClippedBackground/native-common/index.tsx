@@ -8,7 +8,12 @@ import Svg from "../../../../../components/svg/Svg";
 
 const SIZE = 30;
 
-const ClippedBackground = props => {
+interface ClippedBackgroundProps {
+  width?: number;
+  style?: RX.Types.StyleRuleSetOrArray<RX.Types.ViewStyle>;
+}
+
+const ClippedBackground = (props: ClippedBackgroundProps) => {
   const [layout, setLayout] = React.useState({
     width: props.width || 0,
     height: 0
