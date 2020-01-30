@@ -22,6 +22,7 @@ import {
 import { RatesState } from "../../store/rates/types";
 import { exchange } from "../../store/wallets/actions";
 import { Wallet, WalletsState } from "../../store/wallets/types";
+import ClippedBackground from "./components/ClippedBackground";
 import Header from "./components/Header";
 import Picker from "./components/Picker";
 import ExchangeTextField from "./components/TextField";
@@ -57,26 +58,10 @@ const _styles = {
   form: RX.Styles.createViewStyle({
     flex: 1
   }),
-  fromRow: RX.Styles.createViewStyle({
+  row: RX.Styles.createViewStyle({
     width: window.width,
     minWidth: window.width,
     flex: 1
-  }),
-  toRow: RX.Styles.createViewStyle({
-    width: window.width,
-    minWidth: window.width,
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.2)",
-
-    ...RX.Platform.select({
-      default: {},
-      web: {
-        clipPath:
-          "polygon(0% 0%, 46% 0%, 50% 4%, 54% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        WebkitClipPath:
-          "polygon(0% 0%, 46% 0%, 50% 4%, 54% 0%, 100% 0%, 100% 100%, 0% 100%)"
-      }
-    })
   })
 };
 
@@ -442,7 +427,7 @@ export const Exchange = (props: ExchangeProps) => {
           />
           <RX.View style={_styles.form}>
             <Slider
-              style={_styles.fromRow}
+              style={_styles.row}
               onIndexChanged={handleFromIndexChange}
               index={fromIndex}
               loop
@@ -468,60 +453,62 @@ export const Exchange = (props: ExchangeProps) => {
                 );
               })}
             </Slider>
-            <Slider
-              style={_styles.toRow}
-              onIndexChanged={handleToIndexChange}
-              index={toIndex}
-              loop
-            >
-              {Object.keys(wallets).map((_, i) => {
-                const wallet = wallets[_];
-                const shouldShowHint =
-                  rates &&
-                  rates[fromWallet.currency] &&
-                  fromWallet.id !== toWallet.id;
-                const hint = shouldShowHint ? (
-                  <RX.View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center"
-                    }}
-                  >
-                    <RX.Text
+            <ClippedBackground style={_styles.row} width={window.width}>
+              <Slider
+                style={_styles.row}
+                onIndexChanged={handleToIndexChange}
+                index={toIndex}
+                loop
+              >
+                {Object.keys(wallets).map((_, i) => {
+                  const wallet = wallets[_];
+                  const shouldShowHint =
+                    rates &&
+                    rates[fromWallet.currency] &&
+                    fromWallet.id !== toWallet.id;
+                  const hint = shouldShowHint ? (
+                    <RX.View
                       style={{
-                        color: "rgba(255,255,255,0.4)",
-                        fontSize: 14
+                        flexDirection: "row",
+                        alignItems: "center"
                       }}
                     >
-                      {formatMoney(1, {
-                        locale: "en-US",
-                        currency: toWallet.currency,
-                        minimumFractionDigits: 0
-                      })}{" "}
-                      ={" "}
-                      {formatMoney(getCurrentToRate(), {
-                        locale: "en-US",
-                        currency: fromWallet.currency,
-                        maximumFractionDigits: 4
-                      })}
-                    </RX.Text>
-                  </RX.View>
-                ) : null;
-                return (
-                  <ExchangeTextField
-                    key={`field-${_}`}
-                    wallet={wallet}
-                    amount={toAmount}
-                    ref={toInput.current[i]}
-                    onChange={handleToChange}
-                    disabled={wallet.id !== toWallet.id}
-                    direction={"to"}
-                    style={{ minWidth: width }}
-                    hint={hint}
-                  />
-                );
-              })}
-            </Slider>
+                      <RX.Text
+                        style={{
+                          color: "rgba(255,255,255,0.4)",
+                          fontSize: 14
+                        }}
+                      >
+                        {formatMoney(1, {
+                          locale: "en-US",
+                          currency: toWallet.currency,
+                          minimumFractionDigits: 0
+                        })}{" "}
+                        ={" "}
+                        {formatMoney(getCurrentToRate(), {
+                          locale: "en-US",
+                          currency: fromWallet.currency,
+                          maximumFractionDigits: 4
+                        })}
+                      </RX.Text>
+                    </RX.View>
+                  ) : null;
+                  return (
+                    <ExchangeTextField
+                      key={`field-${_}`}
+                      wallet={wallet}
+                      amount={toAmount}
+                      ref={toInput.current[i]}
+                      onChange={handleToChange}
+                      disabled={wallet.id !== toWallet.id}
+                      direction={"to"}
+                      style={{ minWidth: width }}
+                      hint={hint}
+                    />
+                  );
+                })}
+              </Slider>
+            </ClippedBackground>
           </RX.View>
         </RX.View>
       </KeyboardAwareView>
