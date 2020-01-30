@@ -21,6 +21,7 @@ https://revoluttask.actuosus.now.sh
 <div class="center">
   <img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png" height="400" alt="iOS Simulator Account Screenshot" title="iOS iPhone 8 Simulator Account Screen"/>
   <img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-29_at_20.48.42.png" height="400" alt="iOS Simulator Exchange Screenshot" title="iOS iPhone 8 Simulator Exchange Screen"/>
+  <img src="records/RevolutTaskExchangeFlowiOS.gif" height="400" alt="iOS Simulator Exchange Record" title="iOS Simulator in Simulator mode Exchange Record" />
 </div>
 
 ### Android
