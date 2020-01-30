@@ -42,6 +42,9 @@ const _styles = {
 };
 
 const BubbleCircle = () => {
+  const middlePointOffset = React.useMemo(() => Math.random(), []);
+  const middlePointOpacity = React.useMemo(() => Math.random(), []);
+
   return (
     <Svg height={MIN_BUBBLE_SIZE} width={MIN_BUBBLE_SIZE}>
       <Defs>
@@ -56,7 +59,12 @@ const BubbleCircle = () => {
           gradientUnits={"userSpaceOnUse"}
         >
           <Stop offset={"0"} stopColor={"white"} stopOpacity={"1"} />
-          <Stop offset={"0.75"} stopColor={"white"} stopOpacity={"0.9"} />
+          {/* Emulate blur/depth with random stop points */}
+          <Stop
+            offset={middlePointOffset}
+            stopColor={"white"}
+            stopOpacity={middlePointOpacity}
+          />
           <Stop offset={"1"} stopColor={"white"} stopOpacity={"0"} />
         </RadialGradient>
       </Defs>
@@ -153,7 +161,10 @@ const Bubble = ({ position, width, height }: BubbleProps) => {
         })
       ]}
     >
-      {RX.Platform.select({ default: <BubbleCircle />, web: null })}
+      {RX.Platform.select({
+        default: <BubbleCircle />,
+        web: null
+      })}
     </RX.Animated.View>
   );
 };
