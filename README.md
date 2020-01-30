@@ -18,13 +18,17 @@ https://revoluttask.actuosus.now.sh
 
 ### iOS
 
-<img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png" height="400" alt="iOS Simulator Account Screenshot" title="iOS iPhone 8 Simulator Account Screen"/>
-<img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-29_at_20.48.42.png" height="400" alt="iOS Simulator Exchange Screenshot" title="iOS iPhone 8 Simulator Exchange Screen"/>
+<div class="center">
+  <img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png" height="400" alt="iOS Simulator Account Screenshot" title="iOS iPhone 8 Simulator Account Screen"/>
+  <img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-29_at_20.48.42.png" height="400" alt="iOS Simulator Exchange Screenshot" title="iOS iPhone 8 Simulator Exchange Screen"/>
+</div>
 
 ### Android
 
-<img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Account Screenshot" title="Android Pixel 2 Emulator Account Screen"/>
-<img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Exchange Screenshot" title="Android Pixel 2 Emulator Exchange Screen"/>
+<div class="center">
+  <img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Account Screenshot" title="Android Pixel 2 Emulator Account Screen"/>
+  <img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Exchange Screenshot" title="Android Pixel 2 Emulator Exchange Screen"/>
+</div>
 
 ### Installation
 
