@@ -10,9 +10,11 @@ https://revoluttask.actuosus.now.sh
 
 ### Web
 
-<img src="screenshots/revoluttask.now.sh_account_walletId_1_iPhone_6_7_8_.png" height="400" alt="Google Chrome Account Screenshot" title="Google Chrome in Simulator mode Account Screen"/>
-<img src="screenshots/revoluttask.now.sh_account_fromWalletId_2_toWalletId_1_iPhone 6_7_8_.png"height="400" alt="Google Chrome Exchange Screenshot" title="Google Chrome in Simulator mode Exchange Screen"/>
-<img src="records/RevolutTaskExchangeFlowWeb.gif" height="400" alt="Google Chrome Exchange Record" title="Google Chrome in Simulator mode Exchange Record" />
+<div class="center">
+  <img src="screenshots/revoluttask.now.sh_account_walletId_1_iPhone_6_7_8_.png" height="400" alt="Google Chrome Account Screenshot" title="Google Chrome in Simulator mode Account Screen"/>
+  <img src="screenshots/revoluttask.now.sh_account_fromWalletId_2_toWalletId_1_iPhone 6_7_8_.png"height="400" alt="Google Chrome Exchange Screenshot" title="Google Chrome in Simulator mode Exchange Screen"/>
+  <img src="records/RevolutTaskExchangeFlowWeb.gif" height="400" alt="Google Chrome Exchange Record" title="Google Chrome in Simulator mode Exchange Record" />
+</div>
 
 ### iOS
 
