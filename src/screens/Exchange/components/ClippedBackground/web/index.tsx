@@ -18,6 +18,7 @@ const _styles = {
 interface ClippedBackgroundProps {
   width?: number;
   style?: RX.Types.StyleRuleSetOrArray<RX.Types.ViewStyle>;
+  children: RX.Types.ReactNode;
 }
 
 const ClippedBackground = (props: ClippedBackgroundProps) => (
