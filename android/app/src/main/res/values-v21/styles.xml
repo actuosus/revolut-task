@@ -1,0 +1,7 @@
+<resources>
+  <style name="AppTheme.Launcher">
+    <item name="android:windowBackground">@drawable/launch_screen</item>
+    <item name="android:windowLightStatusBar">true</item>
+    <item name="android:statusBarColor">@color/colorWhite</item>
+  </style>
+</resources>
