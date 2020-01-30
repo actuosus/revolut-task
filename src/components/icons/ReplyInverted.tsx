@@ -1,4 +1,5 @@
 import React from "react";
+import RX from "reactxp";
 import Path from "../svg/Path";
 import Svg from "../svg/Svg";
 
@@ -13,7 +14,13 @@ const ReplyInverted = (props: IconProps) => {
       width={props.size || 24}
       height={props.size || 24}
       viewBox={"0 0 24 24"}
-      style={{ transform: [{ rotateY: "180deg" }] }}
+      style={{
+        transform: RX.Platform.select({
+          // @ts-ignore Web styles
+          default: [{ rotateY: "180deg" }],
+          web: "rotateY(180deg)"
+        })
+      }}
     >
       <Path
         d={"M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"}
