@@ -21,14 +21,15 @@ https://revoluttask.actuosus.now.sh
 <div class="center">
   <img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-28_at_23.14.23.png" height="400" alt="iOS Simulator Account Screenshot" title="iOS iPhone 8 Simulator Account Screen"/>
   <img src="screenshots/Simulator_Screen_Shot_-_iPhone_8_-_2020-01-29_at_20.48.42.png" height="400" alt="iOS Simulator Exchange Screenshot" title="iOS iPhone 8 Simulator Exchange Screen"/>
-  <img src="records/RevolutTaskExchangeFlowiOS.gif" height="400" alt="iOS Simulator Exchange Record" title="iOS Simulator in Simulator mode Exchange Record" />
+  <img src="records/RevolutTaskExchangeFlowiOS.gif" height="400" alt="iOS Simulator Exchange Record" title="iOS Simulator Exchange Record" />
 </div>
 
 ### Android
 
 <div class="center">
   <img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Account Screenshot" title="Android Pixel 2 Emulator Account Screen"/>
-  <img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Exchange Screenshot" title="Android Pixel 2 Emulator Exchange Screen"/>
+  <img src="screenshots/Screenshot_1580321764.png" height="400" alt="Android Emulator Exchange Screenshot" title="Android Pixel 2 Emulator Exchange Screen"/>
+  <img src="records/RevolutTaskExchangeFlowAndroid.gif" height="400" alt="v Exchange Record" title="Android Emulator Exchange Record" />
 </div>
 
 ### Installation
