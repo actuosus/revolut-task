@@ -4,7 +4,7 @@ Currency exchange application for Revolut task.
 
 ## Demo
 
-https://revoluttask.actuosus.now.sh
+https://revoluttask.now.sh
 
 ## Screenshots
 
