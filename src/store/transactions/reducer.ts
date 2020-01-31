@@ -4,53 +4,7 @@ import {
   TransactionType
 } from "./types";
 
-const initialState: TransactionsState = {
-  "1": {
-    id: "1",
-    type: TransactionType.TRANSFER,
-    fromWalletId: "2",
-    toWalletId: "1",
-    amount: 50,
-    fromAmount: 37.18,
-    timestamp: 1452261660000 // 8 Jan 2016
-  },
-  "2": {
-    id: "2",
-    type: TransactionType.TRANSFER,
-    fromWalletId: "1",
-    toWalletId: "2",
-    amount: 1.34,
-    fromAmount: 1,
-    timestamp: 1452261000000 // 8 Jan 2016
-  },
-  "3": {
-    id: "3",
-    type: TransactionType.TRANSFER,
-    fromWalletId: "2",
-    toWalletId: "1",
-    amount: 7.45,
-    fromAmount: 5,
-    timestamp: 1452081600000 // 6 Jan 2016
-  },
-  "4": {
-    id: "4",
-    type: TransactionType.TRANSFER,
-    fromWalletId: "2",
-    toWalletId: "1",
-    amount: 7.45,
-    fromAmount: 5,
-    timestamp: 1450459620000 // 18 Dec 2015
-  },
-  "5": {
-    id: "5",
-    type: TransactionType.TRANSFER,
-    fromWalletId: "1",
-    toWalletId: "3",
-    amount: 7.45,
-    fromAmount: 5,
-    timestamp: 1450353600000 // 17 Dec 2015
-  }
-};
+const initialState: TransactionsState = {};
 
 export const transactionReducer = (
   state = initialState,
