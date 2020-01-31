@@ -21,6 +21,25 @@ const _styles = {
   })
 };
 
+interface BottomTabBarItemProps {
+  icon: RX.Types.ReactNode;
+  label: string;
+  active?: boolean;
+}
+
+const BottomTabBarItem = ({ icon, label, active }: BottomTabBarItemProps) => (
+  <RX.View style={_styles.item}>
+    <Button style={_styles.button}>
+      {icon}
+      <RX.Text
+        style={[_styles.buttonLabel, active ? { color: "#3266D9" } : {}]}
+      >
+        {label}
+      </RX.Text>
+    </Button>
+  </RX.View>
+);
+
 const BottomTabBar = () => {
   return (
     <RX.View
@@ -33,20 +52,15 @@ const BottomTabBar = () => {
         backgroundColor: "white"
       }}
     >
-      <RX.View style={_styles.item}>
-        <Button style={_styles.button}>
-          <AccountBalance color={"#3266D9"} />
-          <RX.Text style={[_styles.buttonLabel, { color: "#3266D9" }]}>
-            Account
-          </RX.Text>
-        </Button>
-      </RX.View>
-      <RX.View style={_styles.item}>
-        <Button style={_styles.button}>
-          <CreditCard color={"#848093"} />
-          <RX.Text style={_styles.buttonLabel}>Card</RX.Text>
-        </Button>
-      </RX.View>
+      <BottomTabBarItem
+        icon={<AccountBalance color={"#3266D9"} />}
+        label={"Account"}
+        active
+      />
+      <BottomTabBarItem
+        icon={<CreditCard color={"#848093"} />}
+        label={"Card"}
+      />
       <RX.View style={{ flex: 1, alignItems: "center", overflow: "visible" }}>
         <Button
           style={{
@@ -65,18 +79,11 @@ const BottomTabBar = () => {
           </RX.Text>
         </Button>
       </RX.View>
-      <RX.View style={_styles.item}>
-        <Button style={_styles.button}>
-          <Chat color={"#848093"} />
-          <RX.Text style={_styles.buttonLabel}>Support</RX.Text>
-        </Button>
-      </RX.View>
-      <RX.View style={_styles.item}>
-        <Button style={_styles.button}>
-          <AccountCircle color={"#848093"} />
-          <RX.Text style={_styles.buttonLabel}>Profile</RX.Text>
-        </Button>
-      </RX.View>
+      <BottomTabBarItem icon={<Chat color={"#848093"} />} label={"Support"} />
+      <BottomTabBarItem
+        icon={<AccountCircle color={"#848093"} />}
+        label={"Profile"}
+      />
     </RX.View>
   );
 };
