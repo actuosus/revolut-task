@@ -1,7 +1,7 @@
 import React from "react";
 import RX from "reactxp";
 import Path from "../svg/Path";
-import Svg from "../svg/Svg";
+import MaterialIcon from "./MaterialIcon";
 
 type IconProps = {
   color?: string;
@@ -10,10 +10,7 @@ type IconProps = {
 
 const ReplyInverted = (props: IconProps) => {
   return (
-    <Svg
-      width={props.size || 24}
-      height={props.size || 24}
-      viewBox={"0 0 24 24"}
+    <MaterialIcon
       style={{
         transform: RX.Platform.select({
           // @ts-ignore Web styles
@@ -28,7 +25,7 @@ const ReplyInverted = (props: IconProps) => {
         stroke={props.color || "white"}
         strokeWidth={1}
       />
-    </Svg>
+    </MaterialIcon>
   );
 };
 

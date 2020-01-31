@@ -1,6 +1,6 @@
 import React from "react";
 import Path from "../svg/Path";
-import Svg from "../svg/Svg";
+import MaterialIcon from "./MaterialIcon";
 
 type IconProps = {
   color?: string;
@@ -9,13 +9,9 @@ type IconProps = {
 
 const ArrowDropDown = (props: IconProps) => {
   return (
-    <Svg
-      width={props.size || 24}
-      height={props.size || 24}
-      viewBox={"0 0 24 24"}
-    >
+    <MaterialIcon>
       <Path d={"M7 10l5 5 5-5z"} fill={props.color || "white"} />
-    </Svg>
+    </MaterialIcon>
   );
 };
 

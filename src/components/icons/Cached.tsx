@@ -1,6 +1,6 @@
 import React from "react";
 import Path from "../svg/Path";
-import Svg from "../svg/Svg";
+import MaterialIcon from "./MaterialIcon";
 
 type IconProps = {
   color?: string;
@@ -9,10 +9,7 @@ type IconProps = {
 
 const Cached = (props: IconProps) => {
   return (
-    <Svg
-      width={props.size || 24}
-      height={props.size || 24}
-      viewBox={"0 0 24 24"}
+    <MaterialIcon
       style={{ transform: [{ rotateZ: "-60deg" }, { rotateX: "180deg" }] }}
     >
       <Path
@@ -21,7 +18,7 @@ const Cached = (props: IconProps) => {
         }
         fill={props.color || "white"}
       />
-    </Svg>
+    </MaterialIcon>
   );
 };
 
