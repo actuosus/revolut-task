@@ -32,6 +32,20 @@ const _styles = {
   })
 };
 
+interface ActionButton {
+  label: string;
+  icon: RX.Types.ReactNode;
+  disabled?: boolean;
+  onPress?: () => void;
+}
+
+const ActionButton = ({ label, icon, disabled, onPress }: ActionButton) => (
+  <Button style={_styles.button} disabled={disabled} onPress={onPress}>
+    <RX.View style={_styles.buttonIcon}>{icon}</RX.View>
+    <RX.Text style={_styles.buttonText}>{label}</RX.Text>
+  </Button>
+);
+
 interface ActionButtonsProps {
   onExchangePress?: () => void;
 }
@@ -43,24 +57,17 @@ const ActionButtons = (props: ActionButtonsProps) => {
 
   return (
     <RX.View style={_styles.actions}>
-      <Button style={_styles.button} disabled>
-        <RX.View style={_styles.buttonIcon}>
-          <Add size={36} />
-        </RX.View>
-        <RX.Text style={_styles.buttonText}>Top up</RX.Text>
-      </Button>
-      <Button style={_styles.button} onPress={handleExchangePress}>
-        <RX.View style={_styles.buttonIcon}>
-          <Cached size={36} />
-        </RX.View>
-        <RX.Text style={_styles.buttonText}>Exchange</RX.Text>
-      </Button>
-      <Button style={_styles.button} disabled>
-        <RX.View style={_styles.buttonIcon}>
-          <ArrowRightAlt size={36} />
-        </RX.View>
-        <RX.Text style={_styles.buttonText}>Bank</RX.Text>
-      </Button>
+      <ActionButton label={"Top up"} icon={<Add size={36} />} disabled />
+      <ActionButton
+        label={"Exchange"}
+        icon={<Cached size={36} />}
+        onPress={handleExchangePress}
+      />
+      <ActionButton
+        label={"Bank"}
+        icon={<ArrowRightAlt size={36} />}
+        disabled
+      />
     </RX.View>
   );
 };
