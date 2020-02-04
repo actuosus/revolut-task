@@ -5,6 +5,7 @@ import * as RX from "reactxp";
 import { LayoutInfo } from "reactxp/dist/common/Types";
 import { ReduxState } from "../../@types/ReduxState";
 import Button from "../../components/Button";
+import FloatingBubbles from "../../components/FloatingBubbles";
 import FormattedAmount from "../../components/FormattedAmount";
 import ArrowDropDown from "../../components/icons/ArrowDropDown";
 import KeyboardAwareView from "../../components/KeyboardAwareView";
@@ -355,7 +356,7 @@ export const Exchange = (props: ExchangeProps) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#2A6FEC" }}>
       <KeyboardAwareView behavior={"padding"} enabled style={{ flex: 1 }}>
         <RX.View style={_styles.root} onLayout={handleLayout}>
-          {/* <FloatingBubbles /> */}
+          <FloatingBubbles />
           <Header
             headerLeft={
               <Button
