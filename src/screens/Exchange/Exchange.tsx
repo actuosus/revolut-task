@@ -5,7 +5,6 @@ import * as RX from "reactxp";
 import { LayoutInfo } from "reactxp/dist/common/Types";
 import { ReduxState } from "../../@types/ReduxState";
 import Button from "../../components/Button";
-import FloatingBubbles from "../../components/FloatingBubbles";
 import FormattedAmount from "../../components/FormattedAmount";
 import ArrowDropDown from "../../components/icons/ArrowDropDown";
 import KeyboardAwareView from "../../components/KeyboardAwareView";
@@ -164,7 +163,7 @@ export const Exchange = (props: ExchangeProps) => {
       props.unsubscribeFromRates(prevFromWallet.currency);
     }
 
-    props.subscribeToRates(fromWallet.currency);
+    // props.subscribeToRates(fromWallet.currency);
 
     const rate = getCurrentFromRate();
     // Update to amount when from wallet changed.
@@ -245,8 +244,7 @@ export const Exchange = (props: ExchangeProps) => {
     handleSubmit();
   };
 
-  const handleFromChange = (from: string) => {
-    const value = Math.abs(parseFloat(from));
+  const handleFromChange = (value: number) => {
     const rate = getCurrentFromRate();
     setFromAmount(value);
     setToAmount(rate * value);
@@ -256,8 +254,7 @@ export const Exchange = (props: ExchangeProps) => {
     handleSubmit();
   };
 
-  const handleToChange = (to: string) => {
-    const value = Math.abs(parseFloat(to));
+  const handleToChange = (value: number) => {
     const rate = getCurrentFromRate();
     setToAmount(value);
     const fromAmount = parseFloat((value / rate).toFixed(2));
@@ -358,7 +355,7 @@ export const Exchange = (props: ExchangeProps) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#2A6FEC" }}>
       <KeyboardAwareView behavior={"padding"} enabled style={{ flex: 1 }}>
         <RX.View style={_styles.root} onLayout={handleLayout}>
-          <FloatingBubbles />
+          {/* <FloatingBubbles /> */}
           <Header
             headerLeft={
               <Button

@@ -47,10 +47,43 @@ const _styles = {
   })
 };
 
+const formatter = new Intl.NumberFormat("en-US", {
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
+  useGrouping: false
+});
+
+const formatNumber = (number: number) => formatter.format(number);
+
+const formatValue = (direction: "from" | "to", value: string) => {
+  let val = Math.abs(parseFloat(value)).toString();
+
+  if (value && value.indexOf(".") === value.length - 1) {
+    val = value === "." ? "0." : val + ".";
+  } else if (
+    value &&
+    value !== "0" &&
+    value.toString().endsWith("0") &&
+    value.toString().indexOf(".") === value.toString().length - 2
+  ) {
+    val = val + ".0";
+  } else {
+    val = formatNumber(parseFloat(val));
+  }
+
+  if (val === "NaN") {
+    return "";
+  }
+
+  return value ? `${direction === "from" ? "-" : "+"}${val}` : "";
+
+  return value;
+};
+
 type ExchangeTextFieldProps = {
   wallet: Wallet;
   amount?: number;
-  onChange: (value: string) => void;
+  onChange: (value: number) => void;
   onSubmit?: () => void;
   disabled?: boolean;
   autoFocus?: boolean;
@@ -62,9 +95,22 @@ type ExchangeTextFieldProps = {
 const ExchangeTextField = React.forwardRef(
   (props: ExchangeTextFieldProps, ref: React.RefObject<RX.TextInput>) => {
     const { wallet, amount, direction, hint, disabled, autoFocus } = props;
+    const [value, setValue] = React.useState(
+      (typeof amount !== "undefined" && amount.toString()) || ""
+    );
 
     const handleChange = (value: string) => {
-      props.onChange(value);
+      setValue(value);
+
+      const absValue = Math.abs(parseFloat(value));
+
+      if (absValue !== amount) {
+        if (!isNaN(absValue)) {
+          props.onChange(absValue);
+        } else {
+          props.onChange(0);
+        }
+      }
     };
 
     const handlePaste = (event: RX.Types.ClipboardEvent) => {
@@ -93,12 +139,13 @@ const ExchangeTextField = React.forwardRef(
       }
     };
 
-    const absAmount = Math.abs(amount || 0);
-    const value = amount
-      ? direction === "from"
-        ? `-${absAmount}`
-        : `+${absAmount.toFixed(2)}`
-      : "";
+    React.useEffect(() => {
+      setValue((typeof amount !== "undefined" && amount.toString()) || "");
+    }, [amount]);
+
+    if (disabled) {
+      return null;
+    }
 
     return (
       <RX.View
@@ -116,7 +163,7 @@ const ExchangeTextField = React.forwardRef(
             onChangeText={handleChange}
             onSubmitEditing={handleSubmit}
             onPaste={handlePaste}
-            value={value}
+            value={formatValue(direction, value)}
             editable={!disabled}
             autoFocus={autoFocus}
             selectionColor={RX.Platform.select({
