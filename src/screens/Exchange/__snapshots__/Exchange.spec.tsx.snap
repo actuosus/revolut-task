@@ -30,7 +30,7 @@ exports[`<Exchange /> matches its snapshot 1`] = `
             "isTransitioning": false,
             "key": "",
             "params": Object {
-              "fromWalletId": "1",
+              "walletId": "1",
             },
             "routes": Array [],
           },
