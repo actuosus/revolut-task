@@ -6,6 +6,10 @@ Currency exchange application for Revolut task.
 
 https://revoluttask.now.sh
 
+## Tests
+
+[![Build Status](https://travis-ci.org/actuosus/revolut-task.svg?branch=master)](https://travis-ci.org/actuosus/revolut-task)
+
 ## Screenshots
 
 ### Web
