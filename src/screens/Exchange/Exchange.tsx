@@ -164,7 +164,7 @@ export const Exchange = (props: ExchangeProps) => {
       props.unsubscribeFromRates(prevFromWallet.currency);
     }
 
-    // props.subscribeToRates(fromWallet.currency);
+    props.subscribeToRates(fromWallet.currency);
 
     const rate = getCurrentFromRate();
     // Update to amount when from wallet changed.
