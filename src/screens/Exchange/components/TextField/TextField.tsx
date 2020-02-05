@@ -83,7 +83,7 @@ const formatValue = (direction: "from" | "to", value: string) => {
 type ExchangeTextFieldProps = {
   wallet: Wallet;
   amount?: number;
-  onChange: (value: number) => void;
+  onChange: (value?: number) => void;
   onSubmit?: () => void;
   disabled?: boolean;
   autoFocus?: boolean;
@@ -99,16 +99,16 @@ const ExchangeTextField = React.forwardRef(
       (typeof amount !== "undefined" && amount.toString()) || ""
     );
 
-    const handleChange = (value: string) => {
-      setValue(value);
+    const handleChangeText = (text: string) => {
+      setValue(text);
 
-      const absValue = Math.abs(parseFloat(value));
+      const absValue = Math.abs(parseFloat(text));
 
       if (absValue !== amount) {
         if (!isNaN(absValue)) {
           props.onChange(absValue);
         } else {
-          props.onChange(0);
+          props.onChange(undefined);
         }
       }
     };
@@ -143,10 +143,6 @@ const ExchangeTextField = React.forwardRef(
       setValue((typeof amount !== "undefined" && amount.toString()) || "");
     }, [amount]);
 
-    if (disabled) {
-      return null;
-    }
-
     return (
       <RX.View
         style={RX.Styles.combine([_styles.row, props.style])}
@@ -160,7 +156,7 @@ const ExchangeTextField = React.forwardRef(
             // One sad thing that this type sets pattern [\d]* to the input and we have no dot on mobile
             keyboardType={"numeric"}
             style={_styles.input}
-            onChangeText={handleChange}
+            onChangeText={handleChangeText}
             onSubmitEditing={handleSubmit}
             onPaste={handlePaste}
             value={formatValue(direction, value)}
