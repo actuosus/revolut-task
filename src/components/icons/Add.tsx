@@ -9,7 +9,7 @@ type IconProps = {
 
 const Add = (props: IconProps) => {
   return (
-    <MaterialIcon>
+    <MaterialIcon size={props.size}>
       <Path
         d={"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"}
         fill={props.color || "white"}

@@ -10,6 +10,7 @@ type IconProps = {
 const Cached = (props: IconProps) => {
   return (
     <MaterialIcon
+      size={props.size}
       style={{ transform: [{ rotateZ: "-60deg" }, { rotateX: "180deg" }] }}
     >
       <Path

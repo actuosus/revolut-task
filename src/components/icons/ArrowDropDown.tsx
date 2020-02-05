@@ -9,7 +9,7 @@ type IconProps = {
 
 const ArrowDropDown = (props: IconProps) => {
   return (
-    <MaterialIcon>
+    <MaterialIcon size={props.size}>
       <Path d={"M7 10l5 5 5-5z"} fill={props.color || "white"} />
     </MaterialIcon>
   );

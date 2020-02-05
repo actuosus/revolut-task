@@ -9,7 +9,7 @@ type IconProps = {
 
 const ArrowRightAlt = (props: IconProps) => {
   return (
-    <MaterialIcon>
+    <MaterialIcon size={props.size}>
       <Path
         d={"M16.01 11H4v2h12.01v3L20 12l-3.99-4z"}
         fill={props.color || "white"}

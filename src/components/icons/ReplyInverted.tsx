@@ -11,6 +11,7 @@ type IconProps = {
 const ReplyInverted = (props: IconProps) => {
   return (
     <MaterialIcon
+      size={props.size}
       style={{
         transform: RX.Platform.select({
           // @ts-ignore Web styles
