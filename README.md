@@ -33,7 +33,7 @@ https://revoluttask.now.sh
 <div class="center">
   <img src="screenshots/Screenshot_1580244836.png" height="400" alt="Android Emulator Account Screenshot" title="Android Pixel 2 Emulator Account Screen"/>
   <img src="screenshots/Screenshot_1580321764.png" height="400" alt="Android Emulator Exchange Screenshot" title="Android Pixel 2 Emulator Exchange Screen"/>
-  <img src="records/RevolutTaskExchangeFlowAndroid.gif" height="400" alt="v Exchange Record" title="Android Emulator Exchange Record" />
+  <img src="records/RevolutTaskExchangeFlowAndroid.gif" height="400" alt="Android Emulator Exchange Record" title="Android Emulator Exchange Record" />
 </div>
 
 ### Installation
@@ -50,6 +50,7 @@ yarn install
 - `yarn start:android` - runs the Android version of the app and attempts to open your app on a connected Android device or emulator
 - `yarn start:windows` - runs the Windows version of the app
 - `yarn start:rn-dev-server` - runs react native (RN) development server
+- `yarn start:next` - runs Next.js server
 
 - `yarn test` – runs the tests using Jest and Enzyme
 
@@ -59,25 +60,25 @@ Created by **create-rx-app@0.6.4**
 
 ## Making use of
 
-- Typescript
-- Babel
-- Webpack
-- React
-- ReactXP
-- Redux
-- Redux Saga
-- Redux Persist
-- DayJS
-- React Native
-- Jest
-- Enzyme
-- Next.js (API proxy and simple SSR)
-- Material Icons (by SVG)
+- [Typescript](https://www.typescriptlang.org/)
+- [Babel](https://babeljs.io/)
+- [Webpack](https://webpack.js.org/)
+- [React](https://reactjs.org/)
+- [ReactXP](https://microsoft.github.io/reactxp/)
+- [Redux](https://redux.js.org/)
+- [Redux Saga](https://redux-saga.js.org/)
+- [Redux Persist](https://github.com/rt2zz/redux-persist)
+- [DayJS](https://day.js.org/)
+- [React Native](https://reactnative.dev/)
+- [Jest](https://jestjs.io/)
+- [Enzyme](https://enzymejs.github.io/enzyme/)
+- [Next.js](https://nextjs.org/) (API proxy and simple SSR)
+- [Material Icons](https://material.io/resources/icons/) (by SVG)
 
 ### Services
 
-- ECB
-- OpenExchange
+- [ECB](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html "Euro foreign exchange reference rates") ([XML](https://en.wikipedia.org/wiki/XML) parsing)
+- [Open Exchange Rates](https://openexchangerates.org/) ([JSON](https://www.json.org/json-en.html) parsing)
 
 ### Plus
 
@@ -86,10 +87,10 @@ Created by **create-rx-app@0.6.4**
 
 ## Challenges
 
-- Animation loop for wallet items rotation with Matrix 3D transformations
-- Swiper (Paged Slider aka Page Control for iOS)
-- React Navigation Stack for Web (copied from React Navigation)
-- Particles cloud (Floating bubbles)
+- [Animation loop for wallet items rotation](./src/components/RotatingItems/RotatingItems.tsx) with [Matrix 3D transformations](./src/lib/utils/3d/Mat3.ts)
+- [Slider](./src/components/Slider/Slider.tsx) (Paged Slider aka Page Control for iOS)
+- [React Navigation Stack for Web](./src/containers/Navigator/web/StackView.tsx) (copied from React Navigation)
+- [Particles cloud](./src/components/FloatingBubbles/FloatingBubbles.tsx) (Floating bubbles)
 
 ## TODO
 

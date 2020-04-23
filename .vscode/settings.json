@@ -7,6 +7,7 @@
         "devtools",
         "persistor",
         "reactxp",
+        "revoluttask",
         "virtuallistview"
     ],
     "editor.codeActionsOnSave": {
