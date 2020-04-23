@@ -76,8 +76,6 @@ const formatValue = (direction: "from" | "to", value: string) => {
   }
 
   return value ? `${direction === "from" ? "-" : "+"}${val}` : "";
-
-  return value;
 };
 
 type ExchangeTextFieldProps = {
