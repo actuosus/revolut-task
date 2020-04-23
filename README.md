@@ -2,7 +2,7 @@
 
 Currency exchange application for Revolut task.
 
-## Demo
+## [Demo](https://revoluttask.now.sh)
 
 https://revoluttask.now.sh
 
