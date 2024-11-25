@@ -41,6 +41,8 @@ const _styles = {
   })
 };
 
+const bubbleSize = MIN_BUBBLE_SIZE / 2;
+
 const BubbleCircle = () => {
   const middlePointOffset = React.useMemo(() => Math.random(), []);
   const middlePointOpacity = React.useMemo(() => Math.random(), []);
@@ -50,12 +52,12 @@ const BubbleCircle = () => {
       <Defs>
         <RadialGradient
           id={"grad"}
-          cx={MIN_BUBBLE_SIZE / 2}
-          cy={MIN_BUBBLE_SIZE / 2}
-          rx={MIN_BUBBLE_SIZE / 2}
-          ry={MIN_BUBBLE_SIZE / 2}
-          fx={MIN_BUBBLE_SIZE / 2}
-          fy={MIN_BUBBLE_SIZE / 2}
+          cx={bubbleSize}
+          cy={bubbleSize}
+          rx={bubbleSize}
+          ry={bubbleSize}
+          fx={bubbleSize}
+          fy={bubbleSize}
           gradientUnits={"userSpaceOnUse"}
         >
           <Stop offset={"0"} stopColor={"white"} stopOpacity={"1"} />
